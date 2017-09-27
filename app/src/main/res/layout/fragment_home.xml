@@ -49,7 +49,7 @@
             style="@style/ImageButtonStyle"
             android:layout_alignParentLeft="true"
             android:drawableLeft="@drawable/vertical_line"
-            android:text="@string/RecommendSongSheed"
+            android:text="@string/RecommendSongSheet"
             android:textColor="@color/colorAccent" />
 
         <TextView
