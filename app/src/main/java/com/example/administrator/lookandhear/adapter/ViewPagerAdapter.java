@@ -40,8 +40,8 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
                 return "排行";
             case 2:
                 return "分类";
-            case 3:
-                return "我的";
+//            case 3:
+//                return "我的";
         }
         return null;
     }

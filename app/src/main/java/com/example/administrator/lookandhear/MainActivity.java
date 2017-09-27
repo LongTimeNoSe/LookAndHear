@@ -10,7 +10,6 @@ import com.example.administrator.lookandhear.base.BaseActivity;
 import com.example.administrator.lookandhear.base.BasePresenter;
 import com.example.administrator.lookandhear.ui.fragments.ClassificPageFragment;
 import com.example.administrator.lookandhear.ui.fragments.HomePageFragment;
-import com.example.administrator.lookandhear.ui.fragments.MinePageFragment;
 import com.example.administrator.lookandhear.ui.fragments.RankingPageFragment;
 
 import java.util.ArrayList;
@@ -43,7 +42,7 @@ public class MainActivity extends BaseActivity {
         mFragmentList.add(new HomePageFragment());
         mFragmentList.add(new RankingPageFragment());
         mFragmentList.add(new ClassificPageFragment());
-        mFragmentList.add(new MinePageFragment());
+//        mFragmentList.add(new MinePageFragment());
 
         contentViewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), mFragmentList));
         tabLayout.setupWithViewPager(contentViewPager);

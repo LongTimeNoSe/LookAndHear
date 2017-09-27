@@ -1,6 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:orientation="vertical">
+
+    <com.youth.banner.Banner
+        android:id="@+id/banner_home"
+        android:layout_width="match_parent"
+        android:layout_height="160dp">
+
+    </com.youth.banner.Banner>
+
+    <View style="@style/ViewStyle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <Button
+            style="@style/MainButtonStyle"
+            android:drawableTop="@drawable/ranking"
+            android:text="@string/Ranking" />
+
+        <Button
+            style="@style/MainButtonStyle"
+            android:drawableTop="@drawable/collection"
+            android:text="@string/Collection" />
+
+        <Button
+            style="@style/MainButtonStyle"
+            android:drawableTop="@drawable/song_sheet"
+            android:text="@string/SongSheet" />
+
+    </LinearLayout>
+
+    <View style="@style/ViewStyle" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp">
+
+        <Button
+            style="@style/ImageButtonStyle"
+            android:layout_alignParentLeft="true"
+            android:drawableLeft="@drawable/vertical_line"
+            android:text="@string/RecommendSongSheed"
+            android:textColor="@color/colorAccent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/iv_more"
+            android:text="@string/more"
+            android:textColor="@color/color_303030"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/iv_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/arrow_right" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_recommend_song"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>
