@@ -18,4 +18,9 @@ public class MinePageFragment extends BaseFragment{
     protected int getLayoutId() {
         return R.layout.fragment_data;
     }
+
+    @Override
+    protected String getBaseUrl() {
+        return null;
+    }
 }

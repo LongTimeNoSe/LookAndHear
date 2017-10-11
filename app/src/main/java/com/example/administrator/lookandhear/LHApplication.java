@@ -14,5 +14,6 @@ public class LHApplication extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
+        mContext = getApplicationContext();
     }
 }

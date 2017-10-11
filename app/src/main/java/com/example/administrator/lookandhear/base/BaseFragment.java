@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.administrator.lookandhear.net.RetrofitManager;
+
 import butterknife.ButterKnife;
 
 /**
@@ -17,6 +19,7 @@ import butterknife.ButterKnife;
 public abstract class BaseFragment<V, T extends BasePresenter<V>> extends Fragment {
 
     private T mPresenter;
+    public RetrofitManager mRetrofitManager;
 
     @Override
     public void onAttach(Context context) {
@@ -30,6 +33,8 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends Fragme
             mPresenter = getPresenter();
             mPresenter.attachView((V) this);
         }
+        initView();
+        requestDate();
     }
 
     @Nullable
@@ -88,7 +93,10 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends Fragme
     protected abstract int getLayoutId();
 
     protected void initView() {
+        mRetrofitManager = RetrofitManager.getInstance(getBaseUrl());
     }
+
+    protected abstract String getBaseUrl();
 
     protected void requestDate() {
     }

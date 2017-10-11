@@ -29,6 +29,18 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitManager {
 
     public static Retrofit mRetrofit;
+    private static RetrofitManager mRetrofitManager;
+
+    public RetrofitManager(String baseUrl) {
+        getRetrofit(baseUrl);
+    }
+
+    public static synchronized RetrofitManager getInstance(String baseUrl) {
+        if (mRetrofitManager == null) {
+            mRetrofitManager = new RetrofitManager(baseUrl);
+        }
+        return mRetrofitManager;
+    }
 
     public static Retrofit getRetrofit(String baseUrl) {
 
@@ -58,7 +70,7 @@ public class RetrofitManager {
 
         }
 
-        mRetrofit = new Retrofit.Builder().baseUrl(baseUrl).client(client.build()).addCallAdapterFactory(RxJava2CallAdapterFactory.create()).addConverterFactory(GsonConverterFactory.create()).build();
+        mRetrofit = new Retrofit.Builder().baseUrl(baseUrl).client(client.build()).addConverterFactory(GsonConverterFactory.create()).addCallAdapterFactory(RxJava2CallAdapterFactory.create()).build();
 
         return mRetrofit;
     }
